@@ -1,6 +1,6 @@
 package com.skypro.demo.projection;
 
-import com.skypro.demo.dto.UserDTO;
+import com.skypro.demo.dto.UserDTOForPost;
 
 public interface UserProjection {
 
@@ -10,8 +10,8 @@ public interface UserProjection {
     Long getAllCommentsCount();
     Long getLastPostId();
 
-    default UserDTO fromUserProgectionToUserDTO() {
-        UserDTO dto = new UserDTO();
+    default UserDTOForPost fromUserProjectionToUserDTO() {
+        UserDTOForPost dto = new UserDTOForPost();
         dto.setId(getUserId());
         dto.setUsername(getUsername());
         dto.setCountPosts(getAllPostCount());

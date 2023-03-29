@@ -14,12 +14,9 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String body;
-
     @ManyToOne
     private Post post;
-
     @ManyToOne
-    private User user;
-
+    private Users user;
 
 }
