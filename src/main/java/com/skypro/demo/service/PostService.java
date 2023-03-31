@@ -28,14 +28,9 @@ public class PostService {
         this.commentRepository = commentRepository;
     }
 
-    public List<UserDTOForPost> getTopTenUsersPerPost(Long id) {
-        Optional<Post> postOptional = postRepository.findById(id);
+    public List<UserDTOForPost> getTopTenUsersPerPost() {
 
-        if(postOptional.isEmpty()) {
-            throw new PostNotFoundException();
-        }
-
-        List<UserProjection> users = postRepository.findTopTenUsers(id);
+        List<UserProjection> users = postRepository.findTopTenUsers();
         return users.stream().map(UserProjection::fromUserProjectionToUserDTO)
                 .collect(Collectors.toList());
     }
