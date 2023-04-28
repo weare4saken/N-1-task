@@ -2,6 +2,8 @@ package com.skypro.demo.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,12 +18,10 @@ public class Post {
     private Long id;
     private String title;
     private String body;
-
     @ManyToOne
-    private User user;
-
+    private Users user;
     @OneToMany(mappedBy = "post")
+    @Fetch(FetchMode.SUBSELECT)
     private List<Comment> comments;
-
 
 }

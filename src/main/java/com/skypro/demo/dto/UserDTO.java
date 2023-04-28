@@ -1,7 +1,6 @@
 package com.skypro.demo.dto;
 
-import com.skypro.demo.projection.PostWithTitleAndBody;
-import com.skypro.demo.projection.UserProjection;
+import com.skypro.demo.model.Users;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,9 +10,12 @@ public class UserDTO {
 
     private Long id;
     private String username;
-    private Long countPosts;
-    private Long countComments;
-    private Long latestPostId;
 
+    public static UserDTO fromUserToUserDTO (Users user) {
+        UserDTO dto = new UserDTO();
+        dto.setId(user.getId());
+        dto.setUsername(user.getUsername());
+        return dto;
+    }
 
 }
