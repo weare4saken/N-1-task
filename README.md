@@ -1,4 +1,4 @@
-## Реализовать контроллер с функциональностью:
+## Задача реализовать контроллер с функциональностью:
 
 ![Это опциональный alt-текст](https://cdn-user36618.skyeng.ru/skyconvert/unsafe/fit-in/684x/https://cdn-user12724.skyeng.ru/image/87dc45641fb92da2c4d6fb1e9d676ff3.jpg)
 
